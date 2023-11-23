@@ -1,9 +1,14 @@
 resource "google_composer_environment" "default" {
   name   = var.environment_name
   region = var.gcp_region
+
   config {
     software_config {
       image_version = var.image_version
+
+      env_variables = {
+        FOO = "bar"
+      }
     }
 
     node_config {

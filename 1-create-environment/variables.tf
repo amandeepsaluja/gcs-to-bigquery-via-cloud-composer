@@ -14,7 +14,7 @@ variable "gcp_region" {
 variable "environment_name" {
   type        = string
   description = "Name of the Composer environment"
-  default     = "cloud-coposer-dev-env"
+  default     = "cloud-composer-dev-env"
 }
 
 variable "image_version" {
