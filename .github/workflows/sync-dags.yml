@@ -24,11 +24,11 @@ jobs:
           workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
           service_account: ${{ secrets.SA_EMAIL }}
 
-        # sync dags
+      # set up gcloud
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+
+      # sync dags
       - name: Sync DAGs
-        uses: patrickwyler/gcs-bucket-sync-action@1.4
-        with:
-          secrets: ${{ steps.auth.outputs.access_token }}
-          bucket: us-central1-cloud-composer--77dd3f5a-bucket
-          sync_dir_from: cloud-composer/dags
-          sync_dir_to: dags
+        run: |
+          gsutil rsync cloud-composer/dags gs://us-central1-cloud-composer--77dd3f5a-bucket/dags
