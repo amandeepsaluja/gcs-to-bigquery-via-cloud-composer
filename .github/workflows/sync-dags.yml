@@ -1,0 +1,34 @@
+name: Syn Airflow DAGs
+
+on: workflow_dispatch
+
+jobs:
+  sync-dags:
+    name: Syn DAGs
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # authenticate with gcloud
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v1
+        with:
+          token_format: access_token
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.SA_EMAIL }}
+
+        # sync dags
+      - name: Sync DAGs
+        uses: patrickwyler/gcs-bucket-sync-action@1.4
+        with:
+          secrets: ${{ steps.auth.outputs.access_token }}
+          bucket: us-central1-cloud-composer--77dd3f5a-bucket
+          sync_dir_from: cloud-composer\dags
+          sync_dir_to: dags

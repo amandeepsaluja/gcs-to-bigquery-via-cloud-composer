@@ -3,7 +3,7 @@ name: Create Cloud Composer Environment
 on: workflow_dispatch
 
 jobs:
-  create-cloud-function:
+  create-composer-environment:
     name: Create Environment
     runs-on: ubuntu-latest
 
