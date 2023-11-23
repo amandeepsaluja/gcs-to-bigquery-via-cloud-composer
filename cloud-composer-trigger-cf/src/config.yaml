@@ -1,0 +1,3 @@
+# Airflow Configurations
+AIRFLOW_SERVER_URL: "https://2488f7a24aa048bcb058a0c32ed25771-dot-us-central1.composer.googleusercontent.com"
+DAG_ID: "excel_to_bigquery"

@@ -39,6 +39,7 @@
   - https://cloud.google.com/composer/docs/configure-email
   - https://www.googlecloudcommunity.com/gc/Data-Analytics/Changing-cloud-composer-variables-with-ci-cd/m-p/648555
   - https://cloud.google.com/sdk/gcloud/reference/composer/environments/run
+  - https://cloud.google.com/composer/docs/composer-2/triggering-with-gcf
 
 - Terraform
 
