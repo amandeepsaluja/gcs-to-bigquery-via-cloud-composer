@@ -6,6 +6,7 @@
 
   - https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/sensors.html
   - https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html
+  - https://airflow.apache.org/docs/apache-airflow-providers-google/stable/_api/airflow/providers/google/cloud/transfers/gcs_to_bigquery/index.html
 
 - Articles/Blogs/StackOverflow/Videos
 
